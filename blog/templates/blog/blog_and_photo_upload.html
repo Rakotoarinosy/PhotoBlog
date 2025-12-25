@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Créer un article de blog et télécharger une photo</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h3>Article de blog</h3>
+        {{ blog_form.as_p }}
+        <h3>Photo</h3>
+        {{ photo_form.as_p }}
+        <button type="submit">Publier</button>
+    </form>
+{% endblock content %}
