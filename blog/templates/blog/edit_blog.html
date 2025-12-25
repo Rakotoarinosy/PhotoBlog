@@ -4,13 +4,13 @@
     <form method="post">
         {{ edit_form.as_p }}
         {% csrf_token %}
-        <button type="submit" >Sauvegarder</button>
+        <button type="submit" class="publish">Sauvegarder</button>
     </form>
     <hr>
     <h3>Supprimer le billet ?</h3>
     <form method="post">
         {{ delete_form }}
         {% csrf_token %}
-        <button type="submit" >Supprimer</button>
+        <button type="submit" class="delete">Supprimer</button>
     </form>
 {% endblock content %}

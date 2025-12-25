@@ -77,3 +77,114 @@ html {
 .logout-btn:hover {
     color: #f1f1f1;
 }
+
+/* Base pour tous les inputs */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 2px 0 2px 0;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+    color: #1d3030;
+    background-color: #ffffe6;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #1d3030;
+    box-shadow: 0 0 0 2px rgba(29, 48, 48, 0.2);
+}
+
+/* Placeholder */
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Disabled */
+input:disabled,
+textarea:disabled,
+select:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+}
+
+/* Erreurs Django */
+input.error,
+textarea.error,
+select.error {
+    border-color: #d9534f;
+}
+
+/* Messages d’erreur */
+.errorlist {
+    color: #d9534f;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Bouton Publish */
+.publish {
+    background-color: #0d6efd; /* bleu moderne */
+    color: #ffffff;
+
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Hover */
+.publish:hover {
+    background-color: #0b5ed7;
+    box-shadow: 0 4px 8px rgba(13, 110, 253, 0.3);
+}
+
+/* Active (clic) */
+.publish:active {
+    background-color: #0a58ca;
+    box-shadow: none;
+}
+
+/* Désactivé */
+.publish:disabled {
+    background-color: #9ec5fe;
+    cursor: not-allowed;
+}
+
+.delete {
+    background-color: #d9534f; /* rouge moderne */
+    color: #ffffff;
+
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
