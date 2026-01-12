@@ -3,18 +3,28 @@
 {% block content %}
     <h2>Votre flux</h2>
     <div class="grid-container">
-        {% for instance in blogs_and_photos %}
+        {% for instance in page_obj %}
             {% if instance|model_type == "Blog" %}
                 {% include "blog/partials/blog_snippet.html" with blog=instance %}
             {% elif instance|model_type == "Photo" %}
-                <div class="post">
-                        <h4>{{ instance.title }}</h4>
-                        <img src="{{ instance.image.url }}">
-                        <p>{{ instance.caption }}</p>
-                        <p><strong>Prise par {% get_poster_display instance.uploader %}</strong></p>
-                        <p>{{ instance.date_created }}</p>
-                </div>
+                {% include 'blog/partials/photo_snippet.html' with photo=instance %}
             {% endif %}
         {% endfor %}
+        <span>
+            {% if page_obj.has_previous %}
+                <a href="?page=1">« première</a>
+                <a href="?page={{ page_obj.previous_page_number }}">précédente</a>
+            {% endif %}
+        
+            <span>
+                Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}.
+
+            </span>
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">suivante</a>
+                
+                <a href="?page={{ page_obj.paginator.num_pages }}">dernière »</a>
+            {% endif %}
+        </span>
     </div>
 {% endblock content %}
